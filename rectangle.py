@@ -40,6 +40,8 @@ class TurtleController(Node):
         self.publisher.publish(msg)
         self.time += 1
         print("time: {}".format(self.time))
+        if self.time > 30:
+            self.destroy_timer(self.timer)
 
 def main(args=None):
     rclpy.init(args=args)
